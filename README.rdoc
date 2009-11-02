@@ -2,6 +2,8 @@
 
 Because <tt>`rake db:pull`</tt> is awesome.
 
+Tapsuey is a Rails plugin that helps you copy production data down into your development environment.
+
 == Install
 
  script/plugin install git://github.com/matthewtodd/tapsuey.git
