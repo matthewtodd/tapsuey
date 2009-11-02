@@ -1,3 +1,4 @@
 * Gemify
 * Testify
-* Wrap Taps::Server so that it's read-only.
+* Wrap <tt>Taps::Server</tt> so that it's read-only.
+* Generate <tt>config/initializers/tapsuey.rb</tt> on plugin install.

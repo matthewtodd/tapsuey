@@ -10,7 +10,11 @@ Tapsuey is a Rails plugin that helps you copy production data down into your dev
 
 Then create <tt>config/initializers/tapsuey.rb</tt>:
 
+ # Where your production deployment lives:
  Tapsuey.host     = 'myapp.com'
+
+ # Will need to be the *same* for development and production.
+ # ENV isn't necessary, of course. Rails.root.join('config', 'tapsuey.txt').read.strip will also do.
  Tapsuey.password = ENV['TAPSUEY_PASSWORD']
 
 == Use
@@ -42,4 +46,18 @@ If you're using paperclip[http://github.com/thoughtbot/paperclip] (or something 
    end
 
    task :pull => 'db:pull:files'
+ end
+
+== Capistrano
+
+And Tapsuey's not just for development! Consider:
+
+ set :rails_env, 'staging'
+
+ task :production do
+   set :rails_env, 'production'
+ end
+
+ after 'deploy:update_code' do
+   run 'RAILS_ENV=staging rake db:pull' if rails_env == 'staging'
  end
