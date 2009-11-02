@@ -35,7 +35,7 @@ module Tapsuey
       uri.host     = host
       uri.port     = port
       uri.path     = '/tapsuey'
-    end
+    end.to_s
   end
 
   def self.taps_database_url
@@ -59,6 +59,6 @@ module Tapsuey
       uri.port     = conf['port']
       uri.path     = '/' + conf['database']
       uri.query    = "encoding=#{conf['encoding']}"
-    end
+    end.to_s
   end
 end
