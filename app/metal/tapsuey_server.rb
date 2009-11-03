@@ -12,7 +12,7 @@ class TapsueyServer
 
     require 'taps/server'
     tapsuey = Rack::Builder.app do
-      use FixPassengerNonRewindableInput
+      use Tapsuey::RewindableInput
       run Taps::Server.new
     end
 
@@ -21,17 +21,5 @@ class TapsueyServer
 
   def call(env)
     @app.call(env)
-  end
-
-  private
-
-  # NoMethodError at /tapsuey/
-  # undefined method `rewind' for #<UNIXSocket:0x9636fec>
-  # file: request.rb location: POST line: 142
-  class FixPassengerNonRewindableInput < Struct.new(:app)
-    def call(env)
-      env['rack.input'] = Rack::RewindableInput.new(env['rack.input'])
-      app.call(env)
-    end
   end
 end
