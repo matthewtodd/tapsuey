@@ -1,0 +1,10 @@
+Description:
+    Configures Tapsuey for your app, so that you can `rake db:pull` from your
+    production database.
+
+Example:
+    `./script/generate tapsuey`
+
+    This will create:
+        config/initializers/tapsuey.rb
+        config/tapsuey.txt

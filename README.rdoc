@@ -7,15 +7,9 @@ Tapsuey is a Rails plugin that helps you copy production data down into your dev
 == Install
 
  script/plugin install git://github.com/matthewtodd/tapsuey.git
+ script/generate tapsuey
 
-Then create <tt>config/initializers/tapsuey.rb</tt>:
-
- # Where your production deployment lives:
- Tapsuey.host     = 'myapp.com'
-
- # Will need to be the *same* for development and production.
- # ENV isn't necessary, of course. Rails.root.join('config', 'tapsuey.txt').read.strip will also do.
- Tapsuey.password = ENV['TAPSUEY_PASSWORD']
+Then edit <tt>config/initializers/tapsuey.rb</tt> for your environment.
 
 == Use
 
