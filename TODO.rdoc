@@ -1,3 +1,5 @@
 * Gemify
 * Testify
 * Wrap <tt>Taps::Server</tt> so that it's read-only.
+* Generator should add/remove config/tapsuey.txt from .gitignore?
+* Drop generator in favor of install/uninstall hooks?

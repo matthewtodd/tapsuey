@@ -11,6 +11,7 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 
  vi config/initializers/tapsuey.rb
 
+ # echo 'config/tapsuey.txt' >> .gitignore
  # git add .
  # git commit
  # git push
