@@ -32,12 +32,6 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 
 And Tapsuey's not just for development! Consider:
 
- set :rails_env, 'staging'
-
- task :production do
-   set :rails_env, 'production'
- end
-
  after 'deploy:update_code' do
    run 'RAILS_ENV=staging rake db:pull' if rails_env == 'staging'
  end
