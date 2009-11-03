@@ -1,3 +1,8 @@
+# Our vendored version of taps has bin/schema with an explicit gem dependency
+# on activerecord-2.2.2. We don't specify this as a dependency in
+# rails/init.rb because it would wreak havoc with all that is holy.
+depend :remote, :gem, 'activerecord', '= 2.2.2'
+
 namespace :tapsuey do
   desc 'Download production tapsuey password to config/tapsuey.txt.'
   task :download do

@@ -9,11 +9,14 @@ Tapsuey is a Rails plugin that helps you copy production data down into your dev
  script/plugin install git://github.com/matthewtodd/tapsuey.git
  script/generate tapsuey
 
-Then edit <tt>config/initializers/tapsuey.rb</tt> for your environment, commit, push, etc.
+ vi config/initializers/tapsuey.rb
 
-And deploy:
+ # git add .
+ # git commit
+ # git push
 
  cap deploy:setup
+ cap deploy:check
  cap deploy
 
 == Use
