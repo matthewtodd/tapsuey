@@ -7,20 +7,20 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 == Install
 
  script/plugin install git://github.com/matthewtodd/tapsuey.git
+
+== Configure
+
  script/generate tapsuey
+ # edit config/initializers/tapsuey.rb
+ # ignore config/tapsuey.txt
 
- vi config/initializers/tapsuey.rb
-
- # echo 'config/tapsuey.txt' >> .gitignore
- # git add .
- # git commit
- # git push
+== Deploy
 
  cap deploy:setup
  cap deploy:check
  cap deploy
 
-(That `cap deploy:check` makes sure that you've got activerecord-2.2.2 available on your production servers. Taps' <tt>bin/schema</tt> has a nasty explicit dependency on <em>that version</em>.)
+(That <tt>`cap deploy:check`</tt> makes sure that you've got activerecord-2.2.2 available on your production servers. Taps' <tt>bin/schema</tt> has a nasty explicit dependency on <em>that version</em>.)
 
 == Use
 
@@ -38,7 +38,7 @@ And Tapsuey's not just for development! Consider:
 
 === Paperclip
 
-If you're using paperclip[http://github.com/thoughtbot/paperclip] and keeping files on the filesystem rather than S3, something like this rake task will come in handy:
+If you're using Paperclip[http://github.com/thoughtbot/paperclip] and keeping files on the filesystem rather than S3, you'll also want to pull those down:
 
  namespace :db do
    namespace :pull do
