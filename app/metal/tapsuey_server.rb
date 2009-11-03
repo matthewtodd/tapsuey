@@ -11,12 +11,7 @@ class TapsueyServer
     Taps::Config.password          = Tapsuey.password
 
     require 'taps/server'
-    tapsuey = Rack::Builder.app do
-      use Tapsuey::RewindableInput
-      run Taps::Server.new
-    end
-
-    @app = Rack::URLMap.new('/tapsuey' => tapsuey)
+    @app = Rack::URLMap.new('/tapsuey' => Taps::Server.new)
   end
 
   def call(env)
