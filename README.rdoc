@@ -12,11 +12,9 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 
  script/generate tapsuey
  # edit config/initializers/tapsuey.rb
- # ignore config/tapsuey.txt
 
 == Deploy
 
- cap deploy:setup
  cap deploy:check
  cap deploy
 

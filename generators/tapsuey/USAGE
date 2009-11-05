@@ -7,4 +7,3 @@ Example:
 
     This will create:
         config/initializers/tapsuey.rb
-        config/tapsuey.txt
