@@ -30,11 +30,11 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 
 === Capistrano
 
-And Tapsuey's not just for development! Consider:
+A <tt>`cap tapsuey:db:pull`</tt> task is provided so you can sync your staging environment with production when you deploy. (A guard clause is included so that the task has no effect in production.)
 
- after 'deploy:update_code' do
-   run 'RAILS_ENV=staging rake db:pull' if rails_env == 'staging'
- end
+You might hook it up like so:
+
+ after 'deploy:update_code', 'tapsuey:db:pull'
 
 === Paperclip
 
