@@ -37,5 +37,5 @@ namespace :tapsuey do
   end
 end
 
-after 'deploy:setup',       'tapsuey:upload_password'
-after 'deploy:update_code', 'tapsuey:symlink_password'
+after 'deploy:setup',           'tapsuey:upload_password'
+after 'deploy:finalize_update', 'tapsuey:symlink_password'
