@@ -11,7 +11,12 @@ class TapsueyServer
     Taps::Config.password          = Tapsuey.password
 
     require 'taps/server'
-    @app = Rack::URLMap.new('/tapsuey' => Taps::Server.new)
+    tapsuey = Rack::Builder.app do
+      use Tapsuey::ReadOnly
+      run Taps::Server.new
+    end
+
+    @app = Rack::URLMap.new('/tapsuey' => tapsuey)
   end
 
   def call(env)
