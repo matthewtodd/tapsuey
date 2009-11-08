@@ -3,8 +3,8 @@
 Tapsuey is a Rails plugin that helps you copy production data down into your
 development environment.
 
-All the heavy lifting is done by Heroku's excellent
-taps[http://github.com/ricardochimal/taps] gem.
+All the heavy lifting is done by (my fork[http://github.com/matthewtodd/taps]
+of) Heroku's excellent taps[http://github.com/ricardochimal/taps] gem.
 
 == Install
 
