@@ -1,6 +1,5 @@
-config.gem 'sinatra',      :lib => false
-config.gem 'rest-client',  :lib => false
-config.gem 'sequel',       :lib => false
-config.gem 'sqlite3-ruby', :lib => false
+unless Rails.root.join('Gemfile').exist?
+  config.gem 'matthewtodd-taps'
+end
 
 require 'tapsuey'
