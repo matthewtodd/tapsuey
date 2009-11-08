@@ -15,10 +15,7 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 
 == Deploy
 
- cap deploy:check
  cap deploy
-
-(That <tt>`cap deploy:check`</tt> makes sure that you've got activerecord-2.2.2 available on your production servers. Taps' <tt>bin/schema</tt> has a nasty explicit dependency on <em>that version</em>.)
 
 == Use
 
