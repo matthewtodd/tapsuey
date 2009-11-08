@@ -1,8 +1,10 @@
 = Tapsuey
 
-Tapsuey is a Rails plugin that helps you copy production data down into your development environment.
+Tapsuey is a Rails plugin that helps you copy production data down into your
+development environment.
 
-All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricardochimal/taps] gem.
+All the heavy lifting is done by Heroku's excellent
+taps[http://github.com/ricardochimal/taps] gem.
 
 == Install
 
@@ -25,7 +27,9 @@ All the heavy lifting is done by Heroku's excellent taps[http://github.com/ricar
 
 === Capistrano
 
-A <tt>`cap tapsuey:db:pull`</tt> task is provided so you can sync your staging environment with production when you deploy. (A guard clause is included so that the task has no effect in production.)
+A <tt>`cap tapsuey:db:pull`</tt> task is provided so you can sync your staging
+environment with production when you deploy. (A guard clause is included so
+that the task has no effect in production.)
 
 You might hook it up like so:
 
@@ -33,7 +37,8 @@ You might hook it up like so:
 
 === Paperclip
 
-If you're using Paperclip[http://github.com/thoughtbot/paperclip] and keeping files on the filesystem rather than S3, you'll also want to pull those down:
+If you're using Paperclip[http://github.com/thoughtbot/paperclip] and keeping
+files on the filesystem rather than S3, you'll also want to pull those down:
 
  namespace :db do
    namespace :pull do
