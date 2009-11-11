@@ -1,5 +1,3 @@
-$:.unshift(File.expand_path(File.join(File.dirname(__FILE__), '..', 'vendor', 'taps-0.2.19', 'lib')))
-
 module Tapsuey
   mattr_accessor :scheme
   mattr_accessor :host
